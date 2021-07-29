@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CameraActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/viewCamera"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.camera.view.PreviewView
+            android:id="@+id/viewFinder"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="300dp"
+            android:layout_height="500dp"
+            app:implementationMode="textureView"
+            tools:ignore="MissingConstraints" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+
+        <View
+            android:id="@+id/cameraBottomView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewFinder"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:background="@color/purple_500"/>
+
+        <ImageButton
+            android:id="@+id/btnCapture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_capture_image"
+            app:layout_constraintStart_toStartOf="@id/cameraBottomView"
+            app:layout_constraintEnd_toEndOf="@id/cameraBottomView"
+            app:layout_constraintBottom_toBottomOf="@id/cameraBottomView"
+            app:layout_constraintTop_toTopOf="@id/cameraBottomView"
+            tools:ignore="ContentDescription" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/viewPhoto"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgPhoto"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="300dp"
+            android:layout_height="500dp"
+            tools:ignore="MissingConstraints" />
+
+        <View
+            android:id="@+id/retakeView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgPhoto"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:background="@color/purple_500"/>
+
+        <ImageButton
+            android:id="@+id/btnRetake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_camera_enhance"
+            android:padding="8dp"
+            app:layout_constraintStart_toStartOf="@id/retakeView"
+            app:layout_constraintEnd_toEndOf="@id/retakeView"
+            app:layout_constraintBottom_toBottomOf="@id/retakeView"
+            app:layout_constraintTop_toTopOf="@id/retakeView"
+            tools:ignore="ContentDescription" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

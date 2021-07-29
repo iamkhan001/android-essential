@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Learn Android</string>
+    <string name="camera">Camera</string>
+    <string name="speech_to_text">Speech to text</string>
+    <string name="text_to_speech">Text to speech</string>
+    <string name="enter_text_to_speak">Enter text to speak</string>
+    <string name="speak">Speak</string>
+    <string name="say_something">Say something!</string>
+</resources>
